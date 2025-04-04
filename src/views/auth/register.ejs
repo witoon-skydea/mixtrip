@@ -1,0 +1,122 @@
+<div class="auth-container">
+  <div class="auth-card">
+    <div class="auth-header">
+      <h1 class="auth-title">Create Account</h1>
+      <p class="auth-subtitle">Join MixTrip to plan, share and discover trips</p>
+    </div>
+    
+    <div class="auth-social">
+      <button class="social-btn google-btn">
+        <i class="fab fa-google"></i> Continue with Google
+      </button>
+      <button class="social-btn facebook-btn">
+        <i class="fab fa-facebook-f"></i> Continue with Facebook
+      </button>
+    </div>
+    
+    <div class="auth-divider">
+      <span>or</span>
+    </div>
+    
+    <form action="/api/auth/register" method="POST" class="auth-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <div class="input-with-icon">
+          <i class="fas fa-user"></i>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            placeholder="Enter your full name"
+            required
+          >
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <div class="input-with-icon">
+          <i class="fas fa-envelope"></i>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Enter your email"
+            required
+          >
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="input-with-icon">
+          <i class="fas fa-lock"></i>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Create a password"
+            required
+            minlength="6"
+          >
+        </div>
+        <div class="password-requirements">
+          <p>Password must be at least 6 characters</p>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="passwordConfirm">Confirm Password</label>
+        <div class="input-with-icon">
+          <i class="fas fa-lock"></i>
+          <input 
+            type="password" 
+            id="passwordConfirm" 
+            name="passwordConfirm" 
+            placeholder="Confirm your password"
+            required
+            minlength="6"
+          >
+        </div>
+      </div>
+      
+      <div class="form-group terms-checkbox">
+        <label class="custom-checkbox">
+          <input type="checkbox" name="terms" id="terms" required>
+          <span class="checkmark"></span>
+          I agree to the <a href="/terms">Terms of Service</a> and <a href="/privacy">Privacy Policy</a>
+        </label>
+      </div>
+      
+      <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+    </form>
+    
+    <div class="auth-footer">
+      <p>Already have an account? <a href="/login">Sign In</a></p>
+    </div>
+  </div>
+  
+  <div class="auth-info">
+    <div class="auth-info-container">
+      <div class="auth-logo">
+        <img src="/images/logo-large.svg" alt="MixTrip" class="logo-large">
+      </div>
+      
+      <h2>Join our community of travelers</h2>
+      <p>Create an account to plan trips, connect with fellow travelers, and discover new destinations.</p>
+      
+      <div class="testimonial-mini">
+        <div class="testimonial-mini-quote">
+          <p>"MixTrip changed how I plan travel. Finding and customizing trip ideas from experienced travelers saved me countless hours!"</p>
+        </div>
+        <div class="testimonial-mini-author">
+          <img src="/images/testimonials/user4.jpg" alt="Alex T." class="testimonial-mini-avatar">
+          <div>
+            <h4>Alex T.</h4>
+            <p>Premium member - 47 trips created</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

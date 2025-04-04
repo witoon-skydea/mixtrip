@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewBox="0 0 120 40" fill="none">
+  <path d="M14.5 10L19.5 30M19.5 10L24.5 30M10 15H29M10 25H29" stroke="url(#paint0_linear)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 17L45 10L50 17L55 10V30" stroke="url(#paint1_linear)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M65 10V30L75 20L65 10Z" stroke="url(#paint2_linear)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M85 10H95C97.7614 10 100 12.2386 100 15C100 17.7614 97.7614 20 95 20H85V30" stroke="url(#paint3_linear)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M110 10V30" stroke="url(#paint4_linear)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M102.5 20H117.5" stroke="url(#paint5_linear)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="10" y1="20" x2="29" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A6BFF"/>
+      <stop offset="1" stop-color="#FF5CA1"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear" x1="40" y1="20" x2="55" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A6BFF"/>
+      <stop offset="1" stop-color="#FF5CA1"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear" x1="65" y1="20" x2="75" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A6BFF"/>
+      <stop offset="1" stop-color="#FF5CA1"/>
+    </linearGradient>
+    <linearGradient id="paint3_linear" x1="85" y1="20" x2="100" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A6BFF"/>
+      <stop offset="1" stop-color="#FF5CA1"/>
+    </linearGradient>
+    <linearGradient id="paint4_linear" x1="110" y1="20" x2="111" y2="20" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A6BFF"/>
+      <stop offset="1" stop-color="#FF5CA1"/>
+    </linearGradient>
+    <linearGradient id="paint5_linear" x1="102.5" y1="20.5" x2="117.5" y2="20.5" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4A6BFF"/>
+      <stop offset="1" stop-color="#FF5CA1"/>
+    </linearGradient>
+  </defs>
+</svg>

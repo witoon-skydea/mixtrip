@@ -1,0 +1,63 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="navbar-brand">
+      <a href="/">
+        <img src="/images/logo.svg" alt="MixTrip" class="logo">
+        <span class="logo-text">MixTrip</span>
+      </a>
+    </div>
+    
+    <div class="navbar-search">
+      <form action="/search" method="GET">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input type="text" name="q" placeholder="Search trips, locations, or users...">
+        </div>
+      </form>
+    </div>
+    
+    <div class="navbar-menu">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="/trips" class="nav-link">Explore</a>
+        </li>
+        
+        <% if (user) { %>
+          <li class="nav-item">
+            <a href="/dashboard" class="nav-link">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="/trips/new" class="nav-link create-trip-btn">
+              <i class="fas fa-plus"></i> New Trip
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle">
+              <img src="<%= user.avatar %>" alt="<%= user.name %>" class="avatar-small">
+            </a>
+            <div class="dropdown-menu">
+              <a href="/users/<%= user._id %>" class="dropdown-item">Profile</a>
+              <a href="/dashboard" class="dropdown-item">My Trips</a>
+              <a href="/profile" class="dropdown-item">Settings</a>
+              <div class="dropdown-divider"></div>
+              <a href="/api/auth/logout" class="dropdown-item">Logout</a>
+            </div>
+          </li>
+        <% } else { %>
+          <li class="nav-item">
+            <a href="/login" class="nav-link">Login</a>
+          </li>
+          <li class="nav-item">
+            <a href="/register" class="nav-link highlight-btn">Sign Up</a>
+          </li>
+        <% } %>
+      </ul>
+    </div>
+    
+    <button class="navbar-toggler">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>

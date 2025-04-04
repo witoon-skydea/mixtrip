@@ -1,0 +1,164 @@
+<div class="dashboard">
+  <div class="dashboard-header">
+    <div class="dashboard-welcome">
+      <h1>Welcome back, <%= user.name.split(' ')[0] %>!</h1>
+      <p class="dashboard-stats">
+        <span><i class="fas fa-map-marked-alt"></i> <%= user.trips ? user.trips.length : 0 %> Trips</span>
+        <span><i class="fas fa-users"></i> <%= user.followers ? user.followers.length : 0 %> Followers</span>
+        <span><i class="fas fa-user-friends"></i> <%= user.following ? user.following.length : 0 %> Following</span>
+      </p>
+    </div>
+    <div class="dashboard-actions">
+      <a href="/trips/new" class="btn btn-primary"><i class="fas fa-plus"></i> Create New Trip</a>
+    </div>
+  </div>
+
+  <div class="dashboard-tabs">
+    <ul class="nav-tabs">
+      <li class="nav-tab active"><a href="#my-trips">My Trips</a></li>
+      <li class="nav-tab"><a href="#saved-trips">Saved Trips</a></li>
+      <li class="nav-tab"><a href="#upcoming">Upcoming</a></li>
+      <li class="nav-tab"><a href="#past">Past Trips</a></li>
+    </ul>
+  </div>
+
+  <div class="tab-content">
+    <div id="my-trips" class="tab-pane active">
+      <div class="dashboard-section">
+        <div class="section-header">
+          <h2>My Trips</h2>
+          <div class="section-actions">
+            <div class="dropdown">
+              <button class="dropdown-btn">
+                Sort by <i class="fas fa-chevron-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#" class="sort-option" data-sort="newest">Newest First</a>
+                <a href="#" class="sort-option" data-sort="oldest">Oldest First</a>
+                <a href="#" class="sort-option" data-sort="alpha">Alphabetical</a>
+                <a href="#" class="sort-option" data-sort="duration">Duration</a>
+              </div>
+            </div>
+            <div class="view-mode">
+              <button class="view-btn grid-view active"><i class="fas fa-th"></i></button>
+              <button class="view-btn list-view"><i class="fas fa-list"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="trips-container grid-view-container">
+          <% if (user.trips && user.trips.length > 0) { %>
+            <% user.trips.forEach(trip => { %>
+              <div class="trip-card">
+                <div class="trip-cover">
+                  <img src="<%= trip.coverImage %>" alt="<%= trip.title %>">
+                  <div class="trip-badges">
+                    <% if (!trip.isPublic) { %>
+                      <span class="badge private-badge"><i class="fas fa-lock"></i> Private</span>
+                    <% } %>
+                    <% if (trip.forkedFrom) { %>
+                      <span class="badge remix-badge"><i class="fas fa-code-branch"></i> Remix</span>
+                    <% } %>
+                  </div>
+                  <div class="trip-actions">
+                    <a href="/trips/<%= trip._id %>/edit" class="trip-action-btn edit-btn">
+                      <i class="fas fa-edit"></i>
+                    </a>
+                    <form action="/api/trips/<%= trip._id %>?_method=DELETE" method="POST" class="delete-form">
+                      <button type="submit" class="trip-action-btn delete-btn confirm-delete">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                <div class="trip-content">
+                  <h3 class="trip-title"><a href="/trips/<%= trip._id %>"><%= trip.title %></a></h3>
+                  <div class="trip-meta">
+                    <span class="trip-location"><i class="fas fa-map-marker-alt"></i> <%= trip.location.country %><% if (trip.location.city) { %>, <%= trip.location.city %><% } %></span>
+                    <span class="trip-duration"><i class="fas fa-calendar-alt"></i> <%= trip.duration %> days</span>
+                  </div>
+                  <div class="trip-dates">
+                    <%= new Date(trip.startDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) %> - <%= new Date(trip.endDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) %>
+                  </div>
+                  <div class="trip-stats">
+                    <span class="trip-stat"><i class="fas fa-heart"></i> <%= trip.likes ? trip.likes.length : 0 %></span>
+                    <span class="trip-stat"><i class="fas fa-comment"></i> <%= trip.commentCount || 0 %></span>
+                    <span class="trip-stat"><i class="fas fa-code-branch"></i> <%= trip.forkCount || 0 %></span>
+                  </div>
+                </div>
+              </div>
+            <% }) %>
+          <% } else { %>
+            <div class="empty-state">
+              <div class="empty-state-icon">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <h3>No trips yet</h3>
+              <p>Start by creating your first travel itinerary</p>
+              <a href="/trips/new" class="btn btn-primary">Create Trip</a>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <div id="saved-trips" class="tab-pane">
+      <div class="dashboard-section">
+        <div class="section-header">
+          <h2>Saved Trips</h2>
+        </div>
+        
+        <div class="trips-container grid-view-container">
+          <!-- This would be populated with actual saved trips -->
+          <div class="empty-state">
+            <div class="empty-state-icon">
+              <i class="fas fa-bookmark"></i>
+            </div>
+            <h3>No saved trips yet</h3>
+            <p>Browse and save trips that inspire you</p>
+            <a href="/trips" class="btn btn-primary">Explore Trips</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="upcoming" class="tab-pane">
+      <div class="dashboard-section">
+        <div class="section-header">
+          <h2>Upcoming Trips</h2>
+        </div>
+        
+        <div class="trips-container grid-view-container">
+          <!-- This would be populated with upcoming trips (where startDate is in the future) -->
+          <div class="empty-state">
+            <div class="empty-state-icon">
+              <i class="fas fa-plane-departure"></i>
+            </div>
+            <h3>No upcoming trips</h3>
+            <p>Plan your next adventure now</p>
+            <a href="/trips/new" class="btn btn-primary">Plan a Trip</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="past" class="tab-pane">
+      <div class="dashboard-section">
+        <div class="section-header">
+          <h2>Past Trips</h2>
+        </div>
+        
+        <div class="trips-container grid-view-container">
+          <!-- This would be populated with past trips (where endDate is in the past) -->
+          <div class="empty-state">
+            <div class="empty-state-icon">
+              <i class="fas fa-history"></i>
+            </div>
+            <h3>No past trips</h3>
+            <p>Your completed trips will appear here</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

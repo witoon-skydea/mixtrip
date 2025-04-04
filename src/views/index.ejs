@@ -1,0 +1,235 @@
+<%- include('partials/banner') %>
+
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <h1 class="hero-title">Create, Share, and Remix Your Travel Adventures</h1>
+      <p class="hero-description">Plan your perfect journey, share it with friends, and get inspired by trips from around the world.</p>
+      <div class="hero-cta">
+        <a href="/register" class="btn btn-primary btn-lg">Get Started</a>
+        <a href="/trips" class="btn btn-outline btn-lg">Explore Trips</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="/images/hero-travel.png" alt="Travel planning" class="hero-img">
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">How it Works</h2>
+      <p class="section-description">Plan your trip in three simple steps</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-map-marked-alt"></i>
+        </div>
+        <h3 class="feature-title">Create Your Itinerary</h3>
+        <p class="feature-description">Design day-by-day travel plans with accommodations, activities, and transportation.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-share-alt"></i>
+        </div>
+        <h3 class="feature-title">Share with Friends</h3>
+        <p class="feature-description">Share your trip plans with friends, family, or the MixTrip community.</p>
+      </div>
+      
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-code-branch"></i>
+        </div>
+        <h3 class="feature-title">Remix and Customize</h3>
+        <p class="feature-description">Find trips you love and remix them to create your own personalized adventure.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="popular-destinations">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Popular Destinations</h2>
+      <p class="section-description">Get inspired by trending locations</p>
+    </div>
+    
+    <div class="destinations-grid">
+      <div class="destination-card">
+        <div class="destination-image">
+          <img src="/images/destinations/japan.jpg" alt="Japan">
+          <div class="destination-overlay">
+            <a href="/search?location=Japan" class="btn btn-light">Explore</a>
+          </div>
+        </div>
+        <h3 class="destination-title">Japan</h3>
+        <p class="destination-count">1,245 trips</p>
+      </div>
+      
+      <div class="destination-card">
+        <div class="destination-image">
+          <img src="/images/destinations/italy.jpg" alt="Italy">
+          <div class="destination-overlay">
+            <a href="/search?location=Italy" class="btn btn-light">Explore</a>
+          </div>
+        </div>
+        <h3 class="destination-title">Italy</h3>
+        <p class="destination-count">982 trips</p>
+      </div>
+      
+      <div class="destination-card">
+        <div class="destination-image">
+          <img src="/images/destinations/thailand.jpg" alt="Thailand">
+          <div class="destination-overlay">
+            <a href="/search?location=Thailand" class="btn btn-light">Explore</a>
+          </div>
+        </div>
+        <h3 class="destination-title">Thailand</h3>
+        <p class="destination-count">856 trips</p>
+      </div>
+      
+      <div class="destination-card">
+        <div class="destination-image">
+          <img src="/images/destinations/france.jpg" alt="France">
+          <div class="destination-overlay">
+            <a href="/search?location=France" class="btn btn-light">Explore</a>
+          </div>
+        </div>
+        <h3 class="destination-title">France</h3>
+        <p class="destination-count">723 trips</p>
+      </div>
+    </div>
+    
+    <div class="view-all-link">
+      <a href="/trips" class="link-with-arrow">View all destinations <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">What Travelers Say</h2>
+      <p class="section-description">Read success stories from our community</p>
+    </div>
+    
+    <div class="testimonials-slider">
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"MixTrip made planning our honeymoon so easy! We remixed another couple's Italy trip and customized it to fit our interests. Saved us hours of research!"</p>
+        </div>
+        <div class="testimonial-author">
+          <img src="/images/testimonials/user1.jpg" alt="Sarah M." class="author-avatar">
+          <div class="author-info">
+            <h4 class="author-name">Sarah M.</h4>
+            <p class="author-location">New York, USA</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"As a solo traveler, I love finding trip ideas from others who've been to my dream destinations. The day-by-day itineraries are incredibly detailed and helpful."</p>
+        </div>
+        <div class="testimonial-author">
+          <img src="/images/testimonials/user2.jpg" alt="David L." class="author-avatar">
+          <div class="author-info">
+            <h4 class="author-name">David L.</h4>
+            <p class="author-location">London, UK</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="testimonial-card">
+        <div class="testimonial-content">
+          <p>"I travel with my family of 5, and MixTrip helps me organize our complex itineraries. Sharing our trips has also connected us with other traveling families!"</p>
+        </div>
+        <div class="testimonial-author">
+          <img src="/images/testimonials/user3.jpg" alt="Maria C." class="author-avatar">
+          <div class="author-info">
+            <h4 class="author-name">Maria C.</h4>
+            <p class="author-location">Barcelona, Spain</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h2 class="cta-title">Ready to start your adventure?</h2>
+        <p class="cta-description">Join thousands of travelers creating and sharing trip itineraries around the world.</p>
+        <a href="/register" class="btn btn-primary btn-lg">Sign Up For Free</a>
+      </div>
+      <div class="cta-image">
+        <img src="/images/cta-illustration.svg" alt="Start your adventure">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="app-features">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Powerful Planning Tools</h2>
+      <p class="section-description">Everything you need for your perfect trip</p>
+    </div>
+    
+    <div class="app-features-grid">
+      <div class="app-feature">
+        <div class="app-feature-icon">
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <h3 class="app-feature-title">Day-by-Day Planning</h3>
+        <p class="app-feature-description">Create detailed daily itineraries with activities, accommodations, and transportation.</p>
+      </div>
+      
+      <div class="app-feature">
+        <div class="app-feature-icon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <h3 class="app-feature-title">Interactive Maps</h3>
+        <p class="app-feature-description">Visualize your route with interactive maps and location details.</p>
+      </div>
+      
+      <div class="app-feature">
+        <div class="app-feature-icon">
+          <i class="fas fa-dollar-sign"></i>
+        </div>
+        <h3 class="app-feature-title">Budget Tracking</h3>
+        <p class="app-feature-description">Keep track of estimated costs for accommodation, activities, and transportation.</p>
+      </div>
+      
+      <div class="app-feature">
+        <div class="app-feature-icon">
+          <i class="fas fa-users"></i>
+        </div>
+        <h3 class="app-feature-title">Collaboration</h3>
+        <p class="app-feature-description">Plan trips together with friends and family members.</p>
+      </div>
+      
+      <div class="app-feature">
+        <div class="app-feature-icon">
+          <i class="fas fa-cloud-download-alt"></i>
+        </div>
+        <h3 class="app-feature-title">Offline Access</h3>
+        <p class="app-feature-description">Download your itineraries for offline viewing during your travels.</p>
+      </div>
+      
+      <div class="app-feature">
+        <div class="app-feature-icon">
+          <i class="fas fa-bell"></i>
+        </div>
+        <h3 class="app-feature-title">Travel Reminders</h3>
+        <p class="app-feature-description">Set reminders for important reservations and activities.</p>
+      </div>
+    </div>
+  </div>
+</section>
