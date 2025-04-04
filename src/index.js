@@ -8,6 +8,7 @@ const MongoStore = require('connect-mongo');
 const passport = require('passport');
 const methodOverride = require('method-override');
 const helmet = require('helmet');
+const expressLayouts = require('express-ejs-layouts');
 
 // Load environment variables
 dotenv.config();
@@ -57,10 +58,13 @@ app.use((req, res, next) => {
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
+console.log('Static folder path:', path.join(__dirname, 'public'));
 
-// Set view engine
+// Set view engine and layouts
+app.use(expressLayouts);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.set('layout', 'layouts/main');
 
 // Routes
 app.use('/', require('./routes/index'));
